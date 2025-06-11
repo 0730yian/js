@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>自我介紹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar {
+            width: 35%;
+            padding: 20px;
+            border-right: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .sidebar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid #333;
+            cursor: pointer;
+        }
+
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .personal-info {
+            margin-top: 20px;
+            text-align: left;
+            border-top: 1px solid #ccc;
+            padding-top: 12px;
+        }
+
+        .personal-info h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 4px;
+        }
+
+        .personal-info p {
+            font-size: 16px;
+            margin: 4px 0;
+        }
+
+        .main-content {
+            width: 65%;
+            padding: 20px;
+        }
+
+        .main-content h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .main-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .skills-circle {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .skills-circle .circle {
+            width: 90px;
+            height: 90px;
+            border: 5px solid #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            text-align: center;
+            background: #fafafa;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .list-section ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .list-section ul li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .pets img {
+            width: 150px;
+            margin-right: 10px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            cursor: pointer;
+        }
+
+        /* 按鈕樣式 */
+        button#toggle-intro {
+            padding: 6px 12px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button#toggle-intro:focus {
+            outline: 2px solid #555;
+        }
+
+        /* 展開收合動畫 */
+        #more-intro {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+        }
+        #more-intro.show {
+            max-height: 200px; /* 視內容調整 */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img id="avatar-img" src="IMG_4824.jpg" alt="Pei-Ting Lin 頭像" />
+            <h1>王苡安</h1>
+
+            <div class="personal-info">
+                <h3>基本資料</h3>
+                <p><strong>生日：</strong>2008/07/30</p>
+                <p><strong>年齡：</strong>16歲</p>
+                <p><strong>星座：</strong>獅子座</p>
+                <p><strong>家鄉：</strong>台中市</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <p id="msg"></p>
+            <section class="profile">               
+                <h2>自我介紹</h2>
+                <div id="more-intro" style="display: block;">
+                    <p>我是王苡安，目前就讀虎尾科技大學五專部。</p>
+                </div>
+                <button id="toggle-intro">顯示 ▼</button>
+            </section>
+
+            <section class="education list-section">
+                <h2>求學經歷</h2>
+                <ul>
+                    <li>2014 - 2020：臺中市大里區崇光國民小學</li>
+                    <li>2020 - 2023：臺中市立光榮國民中學</li>
+                    <li>2023 - 現在：虎尾科技大學 資訊工程科（二年級）</li>
+                </ul>
+            </section>
+
+            <section class="skills">
+                <h2>興趣</h2>
+                <div class="skills-circle">
+                    <div class="circle">看小說</div>
+                    <div class="circle">追劇</div>
+                    <div class="circle">追星</div>
+                    <div class="circle">歷史</div>
+                </div>
+            </section>
+
+            <section class="pets list-section">
+                <h2>寵物</h2>
+                <p>我有一隻倉鼠名叫薯餅。牠全身毛茸茸的，圓滾滾的小身體像極了一塊金黃色的炸薯餅，名字也是因此而來。薯餅性格活潑，
+                    每天最喜歡在滾輪上奔跑。牠特別愛吃葵花籽和鱈魚香絲，每次我拿出食物，牠總會用閃亮亮的小眼睛盯著我，兩隻小爪子捧著食物啃得津津有味。雖然薯餅不親人但牠還是為我的生活增添了許多樂趣與溫暖。</p>
+                <img id="hamster-img" src="cute.jpg" alt="倉鼠薯餅" />
+            </section>
+
+            <section class="music">
+                <h2>音樂</h2>
+                <form id="music-form">
+                    <label for="music-select">我最喜歡的三首音樂：</label>
+                    <select id="music-select" name="music-select">
+                        <option value="">-- 請選擇 --</option>
+                        <option value="https://music.youtube.com/watch?v=J2v0ODzRWL4&si=YxvXQ4mDhzUP-bfq">Tears</option>
+                        <option value="https://music.youtube.com/watch?v=1mDK3osZm-s&si=LDjcBNEPSYXIJTOS">Like 1999</option>
+                        <option value="https://music.youtube.com/watch?v=UTOxChG5Ucc&si=Ga5NFTTHGFfqVbMZ">To.X</option>
+                    </select>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        var msg = document.getElementById('msg');
+        var name = window.prompt('請輸入姓名');
+        if(name) {
+            msg.textContent = name + '你好!歡迎來到我的網頁';
+        } else {
+            msg.textContent = '你好!歡迎來到我的網頁';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const cuteImage = document.getElementById("hamster-img");
+
+            // 🐹 滑鼠移動切換圖片
+            cuteImage.addEventListener("mouseover", function () {
+                this.src = "ugly.png";
+            });
+            cuteImage.addEventListener("mouseout", function () {
+                this.src = "cute.jpg";
+            });
+
+            // ✨ 興趣點擊詳細介紹
+            const interests = {
+                "看小說": "我喜歡閱讀推理小說。",
+                "追劇": "我熱愛追韓劇和美劇，特別是打鬥題材和懸疑劇情。",
+                "追星": "我是KPOP迷，喜歡看美女唱歌跳舞，最喜歡的團體是BLACKPINK。",
+                "歷史": "我對歷史故事很有興趣，尤其是中國古代史與歐洲歷史。"
+            };
+
+            const circles = document.querySelectorAll(".skills-circle .circle");
+            circles.forEach(function (circle) {
+                circle.addEventListener("click", function () {
+                    const interest = circle.textContent.trim();
+                    const message = interests[interest] || "這是我喜歡的興趣之一！";
+                    alert(message);
+                });
+            });
+
+            // 🙋‍♀️ 展開更多自我介紹（按鈕控制）
+            const extraText = document.getElementById("more-intro");
+            const toggleBtn = document.getElementById("toggle-intro");
+
+            // 初始隱藏內容，按鈕顯示「顯示 ▼」
+            extraText.classList.remove("show");
+            toggleBtn.textContent = "顯示 ▼";
+
+            toggleBtn.addEventListener("click", function () {
+                if (extraText.classList.contains("show")) {
+                    extraText.classList.remove("show");
+                    toggleBtn.textContent = "顯示 ▼";
+                } else {
+                    extraText.classList.add("show");
+                    toggleBtn.textContent = "隱藏 ▲";
+                }
+            });
+
+            // 😀 點擊頭像打招呼
+            const avatar = document.getElementById("avatar-img");
+            avatar.addEventListener("click", function () {
+                alert("哈囉～我是王苡安，感謝來看我的網站！");
+            });
+
+            // 🎵 音樂選單跳轉
+            const musicSelect = document.getElementById('music-select');
+            musicSelect.addEventListener('change', function() {
+                const url = this.value;
+                if (url) {
+                    window.open(url, '_blank');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
